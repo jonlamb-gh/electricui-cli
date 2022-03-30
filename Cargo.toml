@@ -1,0 +1,28 @@
+[package]
+name = "electricui-cli"
+version = "0.1.1"
+edition = "2021"
+authors = ["Jon Lamb"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jonlamb-gh/electricui-cli"
+description = "An unofficial and incomplete CLI for devices implementing the ElectricUI Binary Protocol"
+
+[[bin]]
+name = "electricui"
+path = "src/main.rs"
+
+[dependencies]
+structopt = { version = "0.3", features = ["color"] }
+ctrlc = { version = "3.2", features=["termination"] }
+tokio-serial = "5.4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time", "io-util", "net", "fs", "signal", "tracing"] }
+tokio-util = { version = "0.6.9", features = ["codec"] }
+futures = "0.3"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "1.0"
+bytes = "1.1"
+derive_more = "0.99"
+byteorder = "1.4"
+ordered-float = "2.10"
+electricui-embedded = "0.1"
