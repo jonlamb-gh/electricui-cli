@@ -31,12 +31,6 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
 
-      - name: Test Documentation
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-          args: --doc --all-features
-
       - name: Clippy
         uses: actions-rs/cargo@v1
         with:

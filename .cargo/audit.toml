@@ -1,0 +1,6 @@
+[advisories]
+ignore = [
+    # serialport needs its nix dependency updated
+    # see https://gitlab.com/susurrus/serialport-rs/-/merge_requests/113
+    'RUSTSEC-2021-0119'
+]

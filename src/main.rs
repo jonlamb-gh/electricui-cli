@@ -1,6 +1,7 @@
 //! An unofficial and incomplete CLI for devices implementing the ElectricUI Binary Protocol.
 
 // TODO
+// - add subcmds for get/set, monitor/watch (spin up a heartbeat monitor task, show vars)
 //#![deny(warnings, clippy::all)]
 
 use crate::opts::{Opts, Subcommand};

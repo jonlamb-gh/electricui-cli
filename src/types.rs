@@ -104,6 +104,9 @@ impl VariableKind {
         // TODO - protocol sanity checks, size checks, etc
         let num_elements = typ.array_wire_length_hint(data.len());
         let expected_size = typ.array_wire_size_hint(num_elements);
+        if typ.wire_size_hint() != 0 && (expected_size != data.len()) {
+            return Err(PacketProtocolError::ProtocolViolation);
+        }
         // TODO check expected_size == data.len() on types that need it
         // err if num_elements == 0 on types that need it
         let is_array = num_elements > 1;
